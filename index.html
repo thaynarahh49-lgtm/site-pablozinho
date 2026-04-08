@@ -10,7 +10,6 @@
     button { padding: 12px 20px; border: 1px solid #00ff9c; border-radius: 8px; background: transparent; color: #00ff9c; font-size: 16px; cursor: pointer; }
     button:hover { background: #00ff9c; color: black; }
     img { width: 100%; border-radius: 10px; margin-top: 10px; }
-    .gallery div { margin-bottom: 20px; }
     .heart { position: fixed; top: -10px; color: #00ff9c; font-size: 18px; animation: fall linear infinite; z-index: 1; }
     @keyframes fall { to { transform: translateY(110vh); } }
     .typing { border-right: 2px solid #00ff9c; display: inline-block; white-space: nowrap; overflow: hidden; animation: typing 4s steps(40, end), blink 0.7s step-end infinite; }
@@ -21,67 +20,37 @@
   </style>
 </head>
 <body>
-
   <div class="card">
     <h1>⚠️ SYSTEM ERROR</h1>
     <p>Erro 404: felicidade não encontrada sem você, Pablo 💔</p>
     <button onclick="corrigirErro()">iniciar correção</button>
   </div>
-
   <div id="conteudo" style="display:none;">
-
+    <div class="card">
+      <h2 class="typing">Executando script de reconquista...</h2>
+      <pre>if (vacilei == true) { pedirDesculpa("Pablo"); melhorar(); protegerNossoAmor(); }</pre>
+    </div>
     <div class="card gallery">
       <h2>memórias.exe ❤️</h2>
-
-      <div>
-        <img src="Foto1.JPG">
-        <p>💙 Essa foto até virou figurinha, ela me lembra o quanto ficamos fofinhos juntos e o quanto eu quero ter uma foto real dessa</p>
-      </div>
-
-      <div>
-        <img src="Foto2.JPG">
-        <p>💙 Eu amo essa sua foto é a minha favorita, me doi muito saber que te magoei</p>
-      </div>
-
-      <div>
-        <img src="Foto3.JPG">
-        <p>💙 Esse filme nunca mais vai ser qualquer filme pra mim, ele é o seu favorito e sempre quando escuto falar ou vejo passando me lembro de vc</p>
-      </div>
-
+      <div><img src="foto1.jpg"><p>💙 Essa foto me mostra o quanto somos fofinhos juntos e o quanto quero que isso seja real.</p></div>
+      <div><img src="foto2.jpg"><p>💙 Eu sei que errei, e me dói saber que te magoei, vc é o amor da minha vida e eu amo essa foto.</p></div>
+      <div><img src="foto3.jpg"><p>💙 Esse filme nunca mais vai ser qualquer filme pra mim, pois é seu filme favorito e ele sempre vai me lembrar de vc.</p></div>
     </div>
-
-    <div class="card">
-      <p class="final">EU TE AMO PABLO 💙</p>
-    </div>
-
-    <div class="card">
-      <h2>Você aceita?</h2>
-      <button onclick="alert('Agora você não tem como dizer não 😏💙')">[ SIM 💙 ]</button>
-    </div>
-
+    <div class="card"><p class="final">EU TE AMO PABLO 💙</p></div>
+    <div class="card"><button onclick="alert('Agora você não tem como dizer não 😏💙')">[ SIM 💙 ]</button></div>
   </div>
-
   <script>
-    function corrigirErro() {
-      document.getElementById('conteudo').style.display = 'block';
-    }
-
+    function corrigirErro() { document.getElementById('conteudo').style.display = 'block'; }
     function criarCoracao() {
       const heart = document.createElement('div');
       heart.classList.add('heart');
       heart.innerText = '💙';
-
       heart.style.left = Math.random() * 100 + 'vw';
       heart.style.animationDuration = (Math.random() * 3 + 2) + 's';
-      heart.style.fontSize = (Math.random() * 10 + 15) + 'px';
-
       document.body.appendChild(heart);
-
       setTimeout(() => heart.remove(), 5000);
     }
-
     setInterval(criarCoracao, 300);
   </script>
-
 </body>
 </html>
